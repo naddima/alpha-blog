@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
         flash[:notice] = "Article was created successfully."
         redirect_to (@article)
         else
-      render 'new'
+        render 'new'
         end
     end  
     
@@ -34,5 +34,11 @@ class ArticlesController < ApplicationController
         render 'edit'
     
         end
+    end
+    
+    def destroy
+        @article = Article.find(params[:id])
+        @article.destroy
+        redirect_to articles_path, status: :see_other
     end
 end
