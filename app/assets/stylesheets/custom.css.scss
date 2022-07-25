@@ -1,0 +1,50 @@
+body {
+  background-color: #cac0a9;
+}
+
+/*NAVBAR*/
+.navbar {
+  background-color: black !important;
+}
+
+.nav-link {
+  color: azure !important;
+  font-size: 25px;
+}
+
+#logo {
+  color: azure !important;
+  font-weight: 900;
+  font-family: "Indie Flower";
+  font-size: 55px;
+  letter-spacing: 5px;
+}
+
+#logo span {
+  font-weight: 100;
+}
+
+/* image box */
+.home_container {
+  margin-top: 50px;
+  text-align: center;
+  background-image: asset-url("typing.jpg");
+  color: wheat;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}
+
+.bg-custom {
+  background-color: #e4e6eb;
+}
+
+.link-cust {
+  font-family: serif;
+  opacity: 0.5;
+}
+.link-cust:hover {
+  opacity: 1;
+  font-size: 20px;
+}
