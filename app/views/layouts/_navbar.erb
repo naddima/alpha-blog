@@ -28,7 +28,7 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Create
+            Articles
           </a>
           <ul class="dropdown-menu">
           <%= link_to "View all articles", articles_path, class: "dropdown-item" %>
@@ -36,17 +36,20 @@
           <%= link_to "New article", new_article_path, class: "dropdown-item" %>
             
           </ul>
-
-        <li class="nav-item">
-          <%= link_to "Articles", articles_path, class: "nav-link" %>
-        </li>
-          <li class="nav-item">       
-          <%= link_to "About", about_path, class: "nav-link" %>
-        </li>
-        </li>
           <li class="nav-item">       
           <%= link_to "Bloggers", users_path, class: "nav-link" %>
-        </li>
+          </li>
+          <li class="nav-item">       
+          <%= link_to "About", about_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+          <%= link_to "Log in", login_path, class: "btn btn-outline-success mt-2 ms-2" %>
+          </li>
+          <li class="nav-item">
+          <%= link_to "Log out", logout_path, data: { "turbo-method": :delete},  class: "btn btn-outline-warning mt-2 ms-2" %>
+          </li>
+          </li>
+          
         </li>
           </ul>
       <form class="d-flex" role="search">
