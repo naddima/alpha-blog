@@ -6,8 +6,14 @@
 
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
+    
+    
+    <% if logged_in? %>
+    <%= link_to "Alpha-blog", articles_path, class: "navbar-brand", id: "logo" %>
+    <% else %>
     <%= link_to "Alpha-blog", root_path, class: "navbar-brand", id: "logo"%>
-    <button
+    <% end %>
+    <button   
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
