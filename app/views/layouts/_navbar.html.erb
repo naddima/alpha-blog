@@ -39,8 +39,9 @@
           <ul class="dropdown-menu">
           <%= link_to "View all articles", articles_path, class: "dropdown-item" %>
             <li><hr class="dropdown-divider" /></li>
+          <% if logged_in?%>
           <%= link_to "New article", new_article_path, class: "dropdown-item" %>
-            
+          <% end %>
           </ul>
           <li class="nav-item">       
           <%= link_to "Bloggers", users_path, class: "nav-link" %>
@@ -49,9 +50,17 @@
           <%= link_to "About", about_path, class: "nav-link" %>
           </li>
           <% if logged_in? %>
-           <li class="nav-item">
-          <%= link_to current_user.username, user_path(current_user), data: { "turbo-method": :delete},  class: "btn btn-outline-warning mt-2 ms-2" %>
-          </li>
+            <div class="dropdown">
+              <a class="btn btn-outline-success dropdown-toggle mt-2 ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 <%= current_user.username %>
+              </a>
+              <ul class="dropdown-menu">
+                <%= link_to "View profile", user_path(current_user), class: "dropdown-item"%>
+                <%= link_to "Edit profile", edit_user_path(current_user), class: "dropdown-item"%>
+              </ul>
+            </div>
+           <% end %>
+          <% if logged_in? %>
           <li class="nav-item">
           <%= link_to "Log out", logout_path, data: { "turbo-method": :delete},  class: "btn btn-outline-warning mt-2 ms-2" %>
           </li>
