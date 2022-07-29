@@ -52,7 +52,7 @@
           <% if logged_in? %>
             <div class="dropdown">
               <a class="btn btn-outline-success dropdown-toggle mt-2 ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                 <%= current_user.username %>
+                 <%= "(Admin)" if current_user.admin?%>  <%= current_user.username %>
               </a>
               <ul class="dropdown-menu">
                 <%= link_to "View profile", user_path(current_user), class: "dropdown-item"%>
