@@ -38,7 +38,7 @@
           </a>
           <ul class="dropdown-menu">
           <%= link_to "View all articles", articles_path, class: "dropdown-item" %>
-            <li><hr class="dropdown-divider" /></li>
+            <li><hr class="dropdown-divider" /></li></li>
           <% if logged_in?%>
           <%= link_to "New article", new_article_path, class: "dropdown-item" %>
           <% end %>
@@ -49,6 +49,18 @@
           <li class="nav-item">       
           <%= link_to "About", about_path, class: "nav-link" %>
           </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categories
+          </a>
+          <ul class="dropdown-menu">
+          <% if logged_in? && current_user.admin? %>
+            <%= link_to "Create new category", new_category_path, class: "dropdown-item" %>
+            <% end %>
+            <%= link_to "View all categories", categories_path, class: "dropdown-item" %>
+            
+          </ul>
+        </li>
           <% if logged_in? %>
             <div class="dropdown">
               <a class="btn btn-outline-success dropdown-toggle mt-2 ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
